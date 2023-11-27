@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tree
+  - peca_0
+  - peca_1
   layers:
   - Default
   - TransparentFX
@@ -12,10 +14,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - peca_0
+  - peca_1
+  - peca_2
+  - peca_3
   - 
   - 
   - 
