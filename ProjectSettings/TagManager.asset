@@ -8,6 +8,9 @@ TagManager:
   - peca_0
   - peca_1
   - peca_3
+  - roda
+  - palha
+  - cavalo
   layers:
   - Default
   - TransparentFX
@@ -19,8 +22,8 @@ TagManager:
   - peca_1
   - peca_2
   - peca_3
-  - 
-  - 
+  - roda
+  - socketLayer
   - 
   - 
   - 
