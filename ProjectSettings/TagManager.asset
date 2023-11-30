@@ -5,12 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tree
-  - peca_0
-  - peca_1
-  - peca_3
   - roda
   - palha
   - cavalo
+  - pata_rena
+  - cabeca_rena
+  - cu_rena
   layers:
   - Default
   - TransparentFX
