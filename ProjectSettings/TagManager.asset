@@ -5,12 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tree
-  - roda
-  - palha
-  - cavalo
   - pata_rena
   - cabeca_rena
   - cu_rena
+  - roda_carroca
+  - palha_carroca
+  - cavalo_carroca
+  - carroca
+  - tronco_rena
   layers:
   - Default
   - TransparentFX
