@@ -13,6 +13,10 @@ TagManager:
   - cavalo_carroca
   - carroca
   - tronco_rena
+  - cabine
+  - latao
+  - rodatrain
+  - trail
   layers:
   - Default
   - TransparentFX

@@ -1,8 +1,42 @@
-fileFormatVersion: 2
-guid: 73d5ff33070383a409b0d66c3c37ca85
-folderAsset: yes
-DefaultImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+import xlwings as xw
+
+
+def dadosFormacao(ws):
+    registo_acreditacao = ws.range("B8").value
+    n_horas = ws.range("B5").value
+    data_1_formacao = ws.range("B6").value
+    data_ultima_formacao = ws.range("B7").value
+    print(":::: Dados da Formação ::::")
+    print("Registo Acreditação Ação: ", registo_acreditacao)
+    print("Nº Horas: ", n_horas)
+    print("Data 1º Formação: ", data_1_formacao)
+    print("Data ultima Formação: ", data_ultima_formacao)
+    print("\n")
+
+
+def dadosFormador(ws):
+    registo_formador = ws.range("B11").value
+    nome = ws.range("B12").value
+    nif = ws.range("B13").value
+    print(":::: Dados do Formador ::::")
+    print("Registo Acreditação Formador: ", registo_formador)
+    print("Nome: ", nome)
+    print("NIF: ", nif)
+
+
+def listaFormando(ws):
+    lista = ws.range("A3:C32").value
+    print(":::: Dados dos Formandos ::::")
+    print(lista)
+
+
+if _name_ == "_main_":
+    ws = xw.Book("files/Livro_gestão_formacao_UBBU_Azores.xlsx").sheets[
+        "00-Dados da Ação"
+    ]
+    listaF = xw.Book("files/Livro_gestão_formacao_UBBU_Azores.xlsx").sheets[
+        "01-Lista de formando"
+    ]
+    dadosFormacao(ws)
+    dadosFormador(ws)
+    listaFormando(listaF)
