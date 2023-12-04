@@ -10,13 +10,18 @@ TagManager:
   - cu_rena
   - roda_carroca
   - palha_carroca
-  - cavalo_carroca
   - carroca
   - tronco_rena
   - cabine
   - latao
   - rodatrain
   - trail
+  - animal_carroca
+  - tronco_cavalo
+  - cabeca_cavalo
+  - pataF_cavalo
+  - cauda_cavalo
+  - pataT_cavalo
   layers:
   - Default
   - TransparentFX

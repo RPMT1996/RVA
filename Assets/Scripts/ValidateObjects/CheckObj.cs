@@ -38,6 +38,11 @@ public class CheckObj : MonoBehaviour
             objetoNaMesa = true;
             currentObjeto = palavrasChave[1];
         }
+        else if (tagDoObjetoAssociado.Contains(palavrasChave[2]))
+        {
+            objetoNaMesa = true;
+            currentObjeto = palavrasChave[2];
+        }
     }
 
     void OnTriggerExit(Collider other)
