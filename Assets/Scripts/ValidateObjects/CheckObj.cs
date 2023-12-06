@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class CheckObj : MonoBehaviour
@@ -8,13 +9,15 @@ public class CheckObj : MonoBehaviour
     private bool objetoNaMesa = false;
     private int err;
     private string currentObjeto;
+    public TimerController timerController;
+    public Text errorText;
 
     void Update()
     {
         if (objetoNaMesa)
         {
             FindSockets();
-            Errors();
+            Errors(); 
         }
     }
 
@@ -88,10 +91,22 @@ public class CheckObj : MonoBehaviour
 
         if (err == 0)
         {
-            Debug.Log("Montado com sucesso!");
+            // Stop the timer if there are no errors
+            timerController.StopTimer();
+            // Display the number of errors in the Text component
+            if (errorText != null)
+            {
+                errorText.text = "Objeto bem montado";
+                errorText.color = Color.green;
+            }
         }
-
-        Debug.Log("----------------------------------");
-        Debug.Log("Objeto: " + currentObjeto + "\nTotal de peças mal montadas: " + err);
+        else
+        {
+            if (errorText != null)
+            {
+                errorText.text = "Erros no objecto: " + err;
+                errorText.color = Color.red;
+            }
+        }
     }
 }
