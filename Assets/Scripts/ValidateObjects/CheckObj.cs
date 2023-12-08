@@ -6,19 +6,49 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class CheckObj : MonoBehaviour
 {
     private List<XRSocketInteractor> sockets = new List<XRSocketInteractor>();
+    private string[] palavrasChave = { "carroca", "rena", "cavalo" };
     private bool objetoNaMesa = false;
-    private int err;
-    private string currentObjeto;
+    private bool carrocaMesa = false;
+    private bool acabou = false;
+    private int err = 0;
     public TimerController timerController;
-    public Text errorText;
+    private string currentObjeto;
+    public Text carrocaError;
 
     void Update()
     {
-        if (objetoNaMesa)
+        if (carrocaMesa)
         {
             FindSockets();
-            Errors(); 
+            Errors();
+
+            Debug.Log(acabou);
+            if (acabou == true)
+            {
+                // Stop the timer if there are no errors
+                timerController.StopTimer();
+                // Display the number of errors in the Text component
+                if (carrocaError != null)
+                {
+                    carrocaError.text = "Objeto bem montado";
+                    carrocaError.color = Color.green;
+                }
+            }
+            else
+            {
+                if (err != 0)
+                {
+                    if (carrocaError != null)
+                    {
+                        carrocaError.text = "Erros no objecto: " + err;
+                        carrocaError.color = Color.red;
+                    }
+                }
+
+            }
         }
+
+        
     }
 
     void FindSockets()
@@ -30,12 +60,10 @@ public class CheckObj : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         string tagDoObjetoAssociado = other.tag;
-        string[] palavrasChave = { "carroca", "rena", "cavalo" };
 
         if (tagDoObjetoAssociado.Contains(palavrasChave[0]))
         {
-            objetoNaMesa = true;
-            currentObjeto = palavrasChave[0];
+            carrocaMesa = true;
         }else if(tagDoObjetoAssociado.Contains(palavrasChave[1]))
         {
             objetoNaMesa = true;
@@ -52,11 +80,16 @@ public class CheckObj : MonoBehaviour
     {
         objetoNaMesa = false;
         currentObjeto = null;
+        if (other.CompareTag(palavrasChave[0]))
+        {
+            carrocaMesa = false;
+            carrocaError.text = "";
+        }
     }
 
     void Errors()
     {
-        err = 0;
+        int erros = -1;
         foreach (XRSocketInteractor socket in sockets)
         {
             if (socket.selectTarget != null)
@@ -77,36 +110,29 @@ public class CheckObj : MonoBehaviour
                         // Verifica se a tag do socket do objeto é igual à tag do socket na mesa
                         if (!socketDoObjeto.CompareTag(pecas.tag))
                         {
-                            err++;
+                            erros++;
                         }
                     }else
                     {
-                        err++;
+                        erros++;
                     }
                    
                 }
             }
-            
+
         }
 
-        if (err == 0)
+        Debug.Log(erros);
+
+        if (erros != -1)
         {
-            // Stop the timer if there are no errors
-            timerController.StopTimer();
-            // Display the number of errors in the Text component
-            if (errorText != null)
-            {
-                errorText.text = "Objeto bem montado";
-                errorText.color = Color.green;
-            }
+            acabou = false;
+            err = erros + 1;
         }
         else
         {
-            if (errorText != null)
-            {
-                errorText.text = "Erros no objecto: " + err;
-                errorText.color = Color.red;
-            }
+            acabou = true;
+
         }
     }
 }
