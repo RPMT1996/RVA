@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 77343709}
   - component: {fileID: 77343708}
   m_Layer: 0
-  m_Name: "Mesa Carro\xE7a"
+  m_Name: "Mesa Carro\xE7a final"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,13 +304,13 @@ Transform:
   m_GameObject: {fileID: 77343706}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.064209, y: -0.87022704, z: -8.79}
+  m_LocalPosition: {x: 13.143997, y: 1.54, z: 0.2204361}
   m_LocalScale: {x: 1.825, y: 1, z: 5.735203}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 804370735}
   - {fileID: 420966029}
-  m_Father: {fileID: 739674632}
+  m_Father: {fileID: 1409704665}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &77343708
 BoxCollider:
@@ -431,6 +431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerController: {fileID: 420966031}
   carrocaError: {fileID: 1494778506}
+  horse: {fileID: 1640525803}
 --- !u!114 &85019753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,12 +724,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147215515}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -1.8769116, y: 0.075, z: -3.6638}
-  m_LocalScale: {x: 0.11911005, y: 0.5, z: 0.048346702}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.69541836, y: -0.8830911, z: 0.84524274}
+  m_LocalScale: {x: 0.18453518, y: 0.30985653, z: 0.08988328}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1689794726}
+  m_Father: {fileID: 543450652370889940}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &164820224
 GameObject:
@@ -1180,12 +1181,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 490262, guid: 1e132733b84047940b6a9043814d6ee2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 344189343}
-    - targetCorrespondingSourceObject: {fileID: 490262, guid: 1e132733b84047940b6a9043814d6ee2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 147215520}
-    - targetCorrespondingSourceObject: {fileID: 490262, guid: 1e132733b84047940b6a9043814d6ee2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1118708617}
     - targetCorrespondingSourceObject: {fileID: 490262, guid: 1e132733b84047940b6a9043814d6ee2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1656916775}
@@ -4465,40 +4460,6 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   targetTag: cabine
---- !u!1 &739674631
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 739674632}
-  m_Layer: 0
-  m_Name: MesaFinal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &739674632
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 739674631}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 154.87979, y: 1.430227, z: 83.87044}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1525717192}
-  - {fileID: 780548322}
-  - {fileID: 77343707}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &780548321
 GameObject:
   m_ObjectHideFlags: 0
@@ -4527,13 +4488,13 @@ Transform:
   m_GameObject: {fileID: 780548321}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.064209, y: -0.87022704, z: 4.36}
-  m_LocalScale: {x: 1.825, y: 1, z: 5.735203}
+  m_LocalPosition: {x: 5.4749565, y: -0.73126143, z: 4.5568404}
+  m_LocalScale: {x: 0.56548816, y: 0.30985653, z: 1.7770901}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2081475831}
   - {fileID: 552912619}
-  m_Father: {fileID: 739674632}
+  m_Father: {fileID: 543450652370889940}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &780548323
 BoxCollider:
@@ -4840,6 +4801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerController: {fileID: 552912620}
   carrocaError: {fileID: 0}
+  horse: {fileID: 0}
 --- !u!114 &820774641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5757,6 +5719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerController: {fileID: 0}
   carrocaError: {fileID: 0}
+  horse: {fileID: 0}
 --- !u!1 &950034873
 GameObject:
   m_ObjectHideFlags: 0
@@ -7604,12 +7567,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118708612}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 2.1190886, y: 0.070999995, z: -3.4682014}
-  m_LocalScale: {x: 0.09578964, y: 0.5, z: 0.048346702}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.019332886, y: -1.5624201, z: -5.0177917}
+  m_LocalScale: {x: 0.47894832, y: 1, z: 0.2900803}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1689794726}
+  m_Father: {fileID: 1640525804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1145247311
 GameObject:
@@ -8993,7 +8956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 156042, guid: 3c0c424ddafa2834686e636738b21e86, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 156042, guid: 3c0c424ddafa2834686e636738b21e86, type: 3}
       propertyPath: m_TagString
@@ -9130,6 +9093,7 @@ Transform:
   - {fileID: 1863795902}
   - {fileID: 2000290686}
   - {fileID: 1169253636}
+  - {fileID: 77343707}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1409704666
@@ -10367,13 +10331,13 @@ Transform:
   m_GameObject: {fileID: 1525717187}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.064209, y: -0.87022704, z: -2.12}
+  m_LocalPosition: {x: 16.422333, y: -1.0644202, z: -23.495354}
   m_LocalScale: {x: 1.825, y: 1, z: 5.735203}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 682816583}
   - {fileID: 1938671724}
-  m_Father: {fileID: 739674632}
+  m_Father: {fileID: 1640525804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1571624945
 GameObject:
@@ -10928,11 +10892,11 @@ GameObject:
   - component: {fileID: 1640525804}
   m_Layer: 0
   m_Name: horse
-  m_TagString: Untagged
+  m_TagString: Horse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1640525804
 Transform:
   m_ObjectHideFlags: 0
@@ -10946,8 +10910,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1525717192}
   - {fileID: 6477340092002729676}
   - {fileID: 1096733875}
+  - {fileID: 1118708617}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1656916770
@@ -12824,8 +12790,8 @@ Transform:
   m_GameObject: {fileID: 1898428366}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.4929117, y: 0.0635, z: -6.2600017}
-  m_LocalScale: {x: 0.093181536, y: 0.5, z: 0.058016054}
+  m_LocalPosition: {x: -0.95, y: 0.0635, z: -6.26}
+  m_LocalScale: {x: 0.31845856, y: 0.5, z: 0.058016054}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1689794726}
@@ -14507,9 +14473,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3751966785359187565}
+  - {fileID: 147215520}
   - {fileID: 831976542413828706}
   - {fileID: 2587434617886010752}
   - {fileID: 8976685628773070911}
+  - {fileID: 780548322}
   - {fileID: 6654282832962138631}
   - {fileID: 930757139}
   m_Father: {fileID: 0}
@@ -17011,7 +16979,6 @@ SceneRoots:
   - {fileID: 680657876}
   - {fileID: 1636964214}
   - {fileID: 1409704665}
-  - {fileID: 739674632}
   - {fileID: 543450652370889940}
   - {fileID: 1102220643}
   - {fileID: 1640525804}

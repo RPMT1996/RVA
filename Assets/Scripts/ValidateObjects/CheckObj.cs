@@ -15,6 +15,7 @@ public class CheckObj : MonoBehaviour
     private string currentObjeto;
     private bool verificacao = false;
     public Text carrocaError;
+    public GameObject horse;
 
     void Update()
     {
@@ -33,6 +34,7 @@ public class CheckObj : MonoBehaviour
                 {
                     carrocaError.text = "Objeto bem montado";
                     carrocaError.color = Color.green;
+                    horse.SetActive(true);
                 }
             }
             else
@@ -49,7 +51,7 @@ public class CheckObj : MonoBehaviour
             }
         }
 
-        
+
     }
 
     void FindSockets()
@@ -65,7 +67,8 @@ public class CheckObj : MonoBehaviour
         if (tagDoObjetoAssociado.Contains(palavrasChave[0]))
         {
             carrocaMesa = true;
-        }else if(tagDoObjetoAssociado.Contains(palavrasChave[1]))
+        }
+        else if (tagDoObjetoAssociado.Contains(palavrasChave[1]))
         {
             objetoNaMesa = true;
             currentObjeto = palavrasChave[1];
@@ -101,23 +104,24 @@ public class CheckObj : MonoBehaviour
 
                 foreach (XRSocketInteractor socketDoObjeto in socketsDoObjeto)
                 {
-                    if(socketDoObjeto.selectTarget != null)
+                    if (socketDoObjeto.selectTarget != null)
                     {
                         GameObject pecas = socketDoObjeto.selectTarget.gameObject;
                         Debug.Log("-------------------------------------------");
                         Debug.Log("--------Objeto montado: " + pecas.name);
                         Debug.Log("--------TAG -> Objeto montado: " + pecas.tag);
-                        Debug.Log("--------TAG -> socket: " + socketDoObjeto.name+"------- " + socketDoObjeto.tag);
+                        Debug.Log("--------TAG -> socket: " + socketDoObjeto.name + "------- " + socketDoObjeto.tag);
                         // Verifica se a tag do socket do objeto é igual à tag do socket na mesa
                         if (!socketDoObjeto.CompareTag(pecas.tag))
                         {
                             erros++;
                         }
-                    }else
+                    }
+                    else
                     {
                         erros++;
                     }
-                   
+
                 }
                 verificacao = true;
             }
@@ -129,7 +133,7 @@ public class CheckObj : MonoBehaviour
         if (erros == -1 && verificacao == true)
         {
             acabou = true;
-            
+
         }
         else
         {

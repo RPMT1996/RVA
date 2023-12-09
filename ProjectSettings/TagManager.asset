@@ -23,6 +23,8 @@ TagManager:
   - cauda_cavalo
   - pataT_cavalo
   - tronco
+  - Horse
+  - Comboio
   layers:
   - Default
   - TransparentFX
