@@ -13,6 +13,7 @@ public class CheckObj : MonoBehaviour
     private int err = 0;
     public TimerController timerController;
     private string currentObjeto;
+    private bool verificacao = false;
     public Text carrocaError;
 
     void Update()
@@ -118,20 +119,22 @@ public class CheckObj : MonoBehaviour
                     }
                    
                 }
+                verificacao = true;
             }
 
         }
 
         Debug.Log(erros);
 
-        if (erros != -1)
+        if (erros == -1 && verificacao == true)
         {
-            acabou = false;
-            err = erros + 1;
+            acabou = true;
+            
         }
         else
         {
-            acabou = true;
+            acabou = false;
+            err = erros + 1;
 
         }
     }

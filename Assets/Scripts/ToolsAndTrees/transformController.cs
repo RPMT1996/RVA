@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class transformController : MonoBehaviour
 {
-    public GameObject shatteredHood;
+    public GameObject shattered;
 
-    public void BreakHood()
+    public void Break()
     {
-        shatteredHood.SetActive(true);
+        shattered.SetActive(true);
         gameObject.SetActive(false);
         //add sounds or particles here
     }
