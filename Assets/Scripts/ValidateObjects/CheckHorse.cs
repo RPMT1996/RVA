@@ -1,20 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.UI;
 
-public class CheckObj : MonoBehaviour
+public class CheckHorse : MonoBehaviour
 {
     private List<XRSocketInteractor> sockets = new List<XRSocketInteractor>();
-    private string[] palavrasChave = { "carroca", "cavalo", "comboio" };
-    private bool carrocaMesa = false;
+    private string[] palavrasChave = { "carroca", "comboio", "cavalo" };
+    private bool cavaloMesa = false;
     private bool acabou = false;
     private int err = 0;
     public TimerController timerController;
     private bool verificacao = false;
-    public Text carrocaError;
+    public Text cavaloError;
+    public GameObject comboio;
     public GameObject cavalo;
-    public GameObject carroca;
     public AudioClip rightAnswerSound;
     public AudioClip wrongAnswerSound;
     private AudioSource audioSource;
@@ -23,7 +23,6 @@ public class CheckObj : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
-
     void FindSockets()
     {
         sockets.Clear();
@@ -34,14 +33,14 @@ public class CheckObj : MonoBehaviour
     {
         string tagDoObjetoAssociado = other.tag;
 
-        if (tagDoObjetoAssociado.Contains(palavrasChave[0]))
+        if (tagDoObjetoAssociado.Contains(palavrasChave[2]))
         {
-            carrocaMesa = true;
+            cavaloMesa = true;
         }
 
-        if (carrocaMesa)
+        if (cavaloMesa)
         {
-            carrocaError.text = "";
+            cavaloError.text = "";
             acabou = false;
             verificacao = false;
             FindSockets();
@@ -53,25 +52,23 @@ public class CheckObj : MonoBehaviour
                 timerController.StopTimer();
                 audioSource.clip = rightAnswerSound;
                 audioSource.Play();
-
                 // Display the number of errors in the Text component
-                if (carrocaError != null)
+                if (cavaloError != null)
                 {
-                    carrocaError.text = "Objeto bem montado";
-                    carrocaError.color = Color.green;
-                    cavalo.SetActive(true);
-                    carroca.SetActive(false);
+                    cavaloError.text = "Objeto bem montado";
+                    cavaloError.color = Color.green;
+                    comboio.SetActive(true);
+                    cavalo.SetActive(false);
                 }
             }
             else
             {
                 if (err != 0)
                 {
-
-                    if (carrocaError != null)
+                    if (cavaloError != null)
                     {
-                        carrocaError.text = "Erros no objecto: " + err;
-                        carrocaError.color = Color.red;
+                        cavaloError.text = "Erros no objecto: " + err;
+                        cavaloError.color = Color.red;
                         audioSource.clip = wrongAnswerSound;
                         audioSource.Play();
                     }
@@ -83,10 +80,10 @@ public class CheckObj : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag(palavrasChave[0]))
+        if (other.CompareTag(palavrasChave[2]))
         {
-            carrocaMesa = false;
-            carrocaError.text = "";
+            cavaloMesa = false;
+            cavaloError.text = "";
         }
     }
 
@@ -106,6 +103,10 @@ public class CheckObj : MonoBehaviour
                     if (socketDoObjeto.selectTarget != null)
                     {
                         GameObject pecas = socketDoObjeto.selectTarget.gameObject;
+                        Debug.Log("-------------------------------------------");
+                        Debug.Log("--------Objeto montado: " + pecas.name);
+                        Debug.Log("--------TAG -> Objeto montado: " + pecas.tag);
+                        Debug.Log("--------TAG -> socket: " + socketDoObjeto.name + "------- " + socketDoObjeto.tag);
                         // Verifica se a tag do socket do objeto é igual à tag do socket na mesa
                         if (!socketDoObjeto.CompareTag(pecas.tag))
                         {
@@ -126,11 +127,13 @@ public class CheckObj : MonoBehaviour
         if (erros == -1 && verificacao == true)
         {
             acabou = true;
+
         }
         else
         {
             acabou = false;
             err = erros + 1;
+
         }
     }
 }
