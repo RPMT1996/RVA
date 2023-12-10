@@ -1707,7 +1707,7 @@ GameObject:
   - component: {fileID: 239982324}
   m_Layer: 0
   m_Name: childlatao
-  m_TagString: Untagged
+  m_TagString: latao_comboio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1787,7 +1787,7 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  targetTag: latao
+  targetTag: latao_comboio
 --- !u!135 &239982325
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3122,7 +3122,7 @@ GameObject:
   - component: {fileID: 555334616}
   m_Layer: 0
   m_Name: childroda
-  m_TagString: Untagged
+  m_TagString: rodatrain_comboio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3202,7 +3202,7 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  targetTag: rodatrain
+  targetTag: rodatrain_comboio
 --- !u!135 &555334617
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4510,7 +4510,7 @@ GameObject:
   - component: {fileID: 736535630}
   m_Layer: 0
   m_Name: childcabine
-  m_TagString: Untagged
+  m_TagString: cabine_comboio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4611,7 +4611,7 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  targetTag: cabine
+  targetTag: cabine_comboio
 --- !u!1 &780548321
 GameObject:
   m_ObjectHideFlags: 0
@@ -5870,13 +5870,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938861273}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2081475831}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &938861275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8370,7 +8370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4735666538778444, guid: 9924da8b458952744bf7eb07349c4760, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.0317419
+      value: 3.036911
       objectReference: {fileID: 0}
     - target: {fileID: 4735666538778444, guid: 9924da8b458952744bf7eb07349c4760, type: 3}
       propertyPath: m_LocalScale.y
@@ -8378,7 +8378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4735666538778444, guid: 9924da8b458952744bf7eb07349c4760, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.728005
+      value: 4.718033
       objectReference: {fileID: 0}
     - target: {fileID: 4735666538778444, guid: 9924da8b458952744bf7eb07349c4760, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8390,7 +8390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4735666538778444, guid: 9924da8b458952744bf7eb07349c4760, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 86.564
+      value: 86.82
       objectReference: {fileID: 0}
     - target: {fileID: 4735666538778444, guid: 9924da8b458952744bf7eb07349c4760, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10035,15 +10035,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9014170783728641054, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9986295
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9014170783728641054, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.052335896
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9014170783728641054, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9014170783809206330, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Depth
@@ -10071,11 +10071,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9014170783809206335, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9986295
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9014170783809206335, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.052335896
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9014170783809206335, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalRotation.y
@@ -10087,7 +10087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9014170783809206335, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9014170783809206335, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -11636,7 +11636,7 @@ GameObject:
   - component: {fileID: 1667735990}
   m_Layer: 0
   m_Name: childatrelado
-  m_TagString: Untagged
+  m_TagString: trail_comboio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11716,7 +11716,7 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  targetTag: trail
+  targetTag: trail_comboio
 --- !u!135 &1667735991
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14696,8 +14696,8 @@ Transform:
   m_GameObject: {fileID: 2081475827}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.15068994, y: 0.53000003, z: -0.28944105}
-  m_LocalScale: {x: 0.5479452, y: 0.037499, z: -0.24376425}
+  m_LocalPosition: {x: 0.15068994, y: 0.53000003, z: -0.25}
+  m_LocalScale: {x: 0.6232877, y: 0.037499, z: -0.3288185}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 938861274}
@@ -15078,7 +15078,7 @@ GameObject:
   - component: {fileID: 1334925186}
   m_Layer: 0
   m_Name: Roda
-  m_TagString: rodatrain
+  m_TagString: rodatrain_comboio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15119,7 +15119,7 @@ GameObject:
   - component: {fileID: 1843240961}
   m_Layer: 0
   m_Name: Cabine
-  m_TagString: cabine
+  m_TagString: cabine_comboio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15978,7 +15978,7 @@ GameObject:
   - component: {fileID: 1583468162}
   m_Layer: 0
   m_Name: Trail
-  m_TagString: trail
+  m_TagString: trail_comboio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16830,7 +16830,7 @@ GameObject:
   - component: {fileID: 1072857738}
   m_Layer: 0
   m_Name: "Lat\xE3o"
-  m_TagString: latao
+  m_TagString: latao_comboio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

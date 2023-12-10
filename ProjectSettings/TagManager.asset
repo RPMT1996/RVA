@@ -12,10 +12,6 @@ TagManager:
   - palha_carroca
   - carroca
   - tronco_rena
-  - cabine
-  - latao
-  - rodatrain
-  - trail
   - animal_carroca
   - tronco_cavalo
   - cabeca_cavalo
@@ -23,9 +19,12 @@ TagManager:
   - cauda_cavalo
   - pataT_cavalo
   - tronco
-  - Comboio
   - cavalo
   - comboio
+  - cabine_comboio
+  - latao_comboio
+  - rodatrain_comboio
+  - trail_comboio
   layers:
   - Default
   - TransparentFX

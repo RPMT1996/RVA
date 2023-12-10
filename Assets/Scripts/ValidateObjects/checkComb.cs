@@ -37,7 +37,6 @@ public class checkComb : MonoBehaviour
         if (tagDoObjetoAssociado.Contains(palavrasChave[1]))
         {
             comboioMesa = true;
-            Debug.Log("Comboio");
 
         }
 
@@ -60,6 +59,8 @@ public class checkComb : MonoBehaviour
                 {
                     comboioError.text = "Objeto bem montado \n Parabéns concluiu o jogo!";
                     comboioError.color = Color.green;
+                    present.SetActive(true);
+                    comboio.SetActive(false);
                 }
             }
             else
@@ -68,7 +69,6 @@ public class checkComb : MonoBehaviour
                 {
                     if (comboioError != null)
                     {
-                        Debug.Log("Cheguei");
                         comboioError.text = "Erros no objecto: " + err;
                         comboioError.color = Color.red;
                         audioSource.clip = wrongAnswerSound;
