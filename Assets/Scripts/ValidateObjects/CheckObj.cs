@@ -13,47 +13,14 @@ public class CheckObj : MonoBehaviour
     public TimerController timerController;
     private bool verificacao = false;
     public Text carrocaError;
-    public Text cavaloError;
-    public Text comboioError;
     public GameObject horse;
+    public AudioClip rightAnswerSound;
+    public AudioClip wrongAnswerSound;
+    private AudioSource audioSource;
 
-    void Update()
+    private void Start()
     {
-        if (carrocaMesa)
-        {
-            carrocaError.text = "";
-            acabou = false;
-            verificacao=false;
-            FindSockets();
-            Errors();
-
-            if (acabou == true)
-            {
-                // Stop the timer if there are no errors
-                timerController.StopTimer();
-                // Display the number of errors in the Text component
-                if (carrocaError != null)
-                {
-                    carrocaError.text = "Objeto bem montado";
-                    carrocaError.color = Color.green;
-                    horse.SetActive(true);
-                }
-            }
-            else
-            {
-                if (err != 0)
-                {
-                    if (carrocaError != null)
-                    {
-                        carrocaError.text = "Erros no objecto: " + err;
-                        carrocaError.color = Color.red;
-                    }
-                }
-
-            }
-        }
-
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     void FindSockets()
@@ -69,6 +36,46 @@ public class CheckObj : MonoBehaviour
         if (tagDoObjetoAssociado.Contains(palavrasChave[0]))
         {
             carrocaMesa = true;
+        }
+
+        if (carrocaMesa)
+        {
+            carrocaError.text = "";
+            acabou = false;
+            verificacao = false;
+            FindSockets();
+            Errors();
+
+            if (acabou == true)
+            {
+                // Stop the timer if there are no errors
+                timerController.StopTimer();
+                audioSource.clip = rightAnswerSound;
+                audioSource.Play();
+
+                // Display the number of errors in the Text component
+                if (carrocaError != null)
+                {
+                    carrocaError.text = "Objeto bem montado";
+                    carrocaError.color = Color.green;
+                    horse.SetActive(true);
+                }
+            }
+            else
+            {
+                if (err != 0)
+                {
+
+                    if (carrocaError != null)
+                    {
+                        carrocaError.text = "Erros no objecto: " + err;
+                        carrocaError.color = Color.red;
+                        audioSource.clip = wrongAnswerSound;
+                        audioSource.Play();
+                    }
+                }
+
+            }
         }
     }
 
@@ -121,13 +128,11 @@ public class CheckObj : MonoBehaviour
         if (erros == -1 && verificacao == true)
         {
             acabou = true;
-
         }
         else
         {
             acabou = false;
             err = erros + 1;
-
         }
     }
 }

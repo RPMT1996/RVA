@@ -5,8 +5,10 @@ public class carrocaScript : MonoBehaviour
 {
     public TimerController timerController;
 
+
     void Start()
     {
+
         // Get all XRGrabInteractable components from the children
         XRGrabInteractable[] grabInteractables = GetComponentsInChildren<XRGrabInteractable>();
 
@@ -22,6 +24,7 @@ public class carrocaScript : MonoBehaviour
         // Start the timer when any object is grabbed
         timerController.StartTimer();
     }
+
 }
 
 

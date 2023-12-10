@@ -13,43 +13,13 @@ public class checkComb : MonoBehaviour
     public TimerController timerController;
     private bool verificacao = false;
     public Text comboioError;
+    public AudioClip rightAnswerSound;
+    public AudioClip wrongAnswerSound;
+    private AudioSource audioSource;
 
-    void Update()
+    private void Start()
     {
-        if (comboioMesa)
-        {
-            comboioError.text = "";
-            acabou = false;
-            verificacao = false;
-            FindSockets();
-            Errors();
-
-            if (acabou == true)
-            {
-                // Stop the timer if there are no errors
-                timerController.StopTimer();
-                // Display the number of errors in the Text component
-                if (comboioError != null)
-                {
-                    comboioError.text = "Objeto bem montado";
-                    comboioError.color = Color.green;
-                }
-            }
-            else
-            {
-                if (err != 0)
-                {
-                    if (comboioError != null)
-                    {
-                        comboioError.text = "Erros no objecto: " + err;
-                        comboioError.color = Color.red;
-                    }
-                }
-
-            }
-        }
-
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     void FindSockets()
@@ -65,6 +35,43 @@ public class checkComb : MonoBehaviour
         if (tagDoObjetoAssociado.Contains(palavrasChave[1]))
         {
             comboioMesa = true;
+        }
+
+        if (comboioMesa)
+        {
+            comboioError.text = "";
+            acabou = false;
+            verificacao = false;
+            FindSockets();
+            Errors();
+
+            if (acabou == true)
+            {
+                // Stop the timer if there are no errors
+                timerController.StopTimer();
+                audioSource.clip = rightAnswerSound;
+                audioSource.Play();
+                // Display the number of errors in the Text component
+                if (comboioError != null)
+                {
+                    comboioError.text = "Objeto bem montado";
+                    comboioError.color = Color.green;
+                }
+            }
+            else
+            {
+                if (err != 0)
+                {
+                    if (comboioError != null)
+                    {
+                        comboioError.text = "Erros no objecto: " + err;
+                        comboioError.color = Color.red;
+                        audioSource.clip = wrongAnswerSound;
+                        audioSource.Play();
+                    }
+                }
+
+            }
         }
     }
 

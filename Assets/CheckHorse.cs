@@ -14,9 +14,29 @@ public class CheckHorse : MonoBehaviour
     private bool verificacao = false;
     public Text cavaloError;
     public GameObject comboio;
+    public AudioClip rightAnswerSound;
+    public AudioClip wrongAnswerSound;
+    private AudioSource audioSource;
 
-    void Update()
+    private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+    }
+    void FindSockets()
+    {
+        sockets.Clear();
+        sockets.AddRange(GetComponentsInChildren<XRSocketInteractor>());
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        string tagDoObjetoAssociado = other.tag;
+
+        if (tagDoObjetoAssociado.Contains(palavrasChave[2]))
+        {
+            cavaloMesa = true;
+        }
+
         if (cavaloMesa)
         {
             cavaloError.text = "";
@@ -29,6 +49,8 @@ public class CheckHorse : MonoBehaviour
             {
                 // Stop the timer if there are no errors
                 timerController.StopTimer();
+                audioSource.clip = rightAnswerSound;
+                audioSource.Play();
                 // Display the number of errors in the Text component
                 if (cavaloError != null)
                 {
@@ -45,28 +67,12 @@ public class CheckHorse : MonoBehaviour
                     {
                         cavaloError.text = "Erros no objecto: " + err;
                         cavaloError.color = Color.red;
+                        audioSource.clip = wrongAnswerSound;
+                        audioSource.Play();
                     }
                 }
 
             }
-        }
-
-
-    }
-
-    void FindSockets()
-    {
-        sockets.Clear();
-        sockets.AddRange(GetComponentsInChildren<XRSocketInteractor>());
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        string tagDoObjetoAssociado = other.tag;
-
-        if (tagDoObjetoAssociado.Contains(palavrasChave[2]))
-        {
-            cavaloMesa = true;
         }
     }
 
