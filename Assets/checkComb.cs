@@ -3,27 +3,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class CheckObj : MonoBehaviour
+public class checkComb : MonoBehaviour
 {
     private List<XRSocketInteractor> sockets = new List<XRSocketInteractor>();
-    private string[] palavrasChave = { "carroca", "comboio", "cavalo" };
-    private bool carrocaMesa = false;
+    private string[] palavrasChave = { "carroca", "Comboio", "Cavalo" };
+    private bool comboioMesa = false;
     private bool acabou = false;
     private int err = 0;
     public TimerController timerController;
     private bool verificacao = false;
-    public Text carrocaError;
-    public Text cavaloError;
     public Text comboioError;
-    public GameObject horse;
 
     void Update()
     {
-        if (carrocaMesa)
+        if (comboioMesa)
         {
-            carrocaError.text = "";
+            comboioError.text = "";
             acabou = false;
-            verificacao=false;
+            verificacao = false;
             FindSockets();
             Errors();
 
@@ -32,21 +29,20 @@ public class CheckObj : MonoBehaviour
                 // Stop the timer if there are no errors
                 timerController.StopTimer();
                 // Display the number of errors in the Text component
-                if (carrocaError != null)
+                if (comboioError != null)
                 {
-                    carrocaError.text = "Objeto bem montado";
-                    carrocaError.color = Color.green;
-                    horse.SetActive(true);
+                    comboioError.text = "Objeto bem montado";
+                    comboioError.color = Color.green;
                 }
             }
             else
             {
                 if (err != 0)
                 {
-                    if (carrocaError != null)
+                    if (comboioError != null)
                     {
-                        carrocaError.text = "Erros no objecto: " + err;
-                        carrocaError.color = Color.red;
+                        comboioError.text = "Erros no objecto: " + err;
+                        comboioError.color = Color.red;
                     }
                 }
 
@@ -66,9 +62,9 @@ public class CheckObj : MonoBehaviour
     {
         string tagDoObjetoAssociado = other.tag;
 
-        if (tagDoObjetoAssociado.Contains(palavrasChave[0]))
+        if (tagDoObjetoAssociado.Contains(palavrasChave[1]))
         {
-            carrocaMesa = true;
+            comboioMesa = true;
         }
     }
 
@@ -76,8 +72,8 @@ public class CheckObj : MonoBehaviour
     {
         if (other.CompareTag(palavrasChave[0]))
         {
-            carrocaMesa = false;
-            carrocaError.text = "";
+            comboioMesa = false;
+            comboioError.text = "";
         }
     }
 

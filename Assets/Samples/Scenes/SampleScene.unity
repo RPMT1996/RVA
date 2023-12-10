@@ -431,6 +431,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerController: {fileID: 420966031}
   carrocaError: {fileID: 1494778506}
+  cavaloError: {fileID: 0}
+  comboioError: {fileID: 0}
   horse: {fileID: 1640525803}
 --- !u!114 &85019753
 MonoBehaviour:
@@ -2961,7 +2963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b958164f3a5561c4e8e4ae574cc23520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
+  timerText: {fileID: 841787087}
 --- !u!1 &555334614
 GameObject:
   m_ObjectHideFlags: 0
@@ -4764,7 +4766,7 @@ GameObject:
   - component: {fileID: 820774639}
   - component: {fileID: 820774642}
   - component: {fileID: 820774641}
-  - component: {fileID: 820774640}
+  - component: {fileID: 820774643}
   m_Layer: 0
   m_Name: socket_base2
   m_TagString: Untagged
@@ -4787,21 +4789,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 682816583}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &820774640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 820774638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d40874679d3e7f4f9173fb0973bd1b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerController: {fileID: 552912620}
-  carrocaError: {fileID: 0}
-  horse: {fileID: 0}
 --- !u!114 &820774641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4883,6 +4870,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &820774643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820774638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92e209125c0c024d808b6ee333ecbf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerController: {fileID: 1938671726}
+  cavaloError: {fileID: 676090210}
+  comboio: {fileID: 0}
 --- !u!1 &841787085
 GameObject:
   m_ObjectHideFlags: 0
@@ -5714,12 +5716,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 938861273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d40874679d3e7f4f9173fb0973bd1b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a2e93024b084fa498946989690c53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerController: {fileID: 0}
-  carrocaError: {fileID: 0}
-  horse: {fileID: 0}
+  timerController: {fileID: 552912620}
+  comboioError: {fileID: 1626300138}
 --- !u!1 &950034873
 GameObject:
   m_ObjectHideFlags: 0
@@ -10890,6 +10891,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1640525804}
+  - component: {fileID: 1640525805}
   m_Layer: 0
   m_Name: horse
   m_TagString: Horse
@@ -10916,6 +10918,19 @@ Transform:
   - {fileID: 1118708617}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1640525805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640525803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9971db03585a6d4ea6c67bd062af934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerController: {fileID: 1938671726}
 --- !u!1 &1656916770
 GameObject:
   m_ObjectHideFlags: 0
@@ -13079,7 +13094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b958164f3a5561c4e8e4ae574cc23520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
+  timerText: {fileID: 1571624947}
 --- !u!1 &1966998659
 GameObject:
   m_ObjectHideFlags: 0
@@ -14612,13 +14627,27 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652370889940}
+  - component: {fileID: 919132148369536623}
   m_Layer: 0
-  m_Name: WoodenTrain
-  m_TagString: Untagged
+  m_Name: comboio
+  m_TagString: Comboio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &919132148369536623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148369536622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20fc6ffce4243d499737bf73b3e51f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerController: {fileID: 552912620}
 --- !u!33 &1424542156726713037
 MeshFilter:
   m_ObjectHideFlags: 0
