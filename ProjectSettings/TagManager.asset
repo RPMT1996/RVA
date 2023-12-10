@@ -25,6 +25,7 @@ TagManager:
   - tronco
   - Comboio
   - cavalo
+  - comboio
   layers:
   - Default
   - TransparentFX

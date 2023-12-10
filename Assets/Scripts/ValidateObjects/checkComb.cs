@@ -37,6 +37,8 @@ public class checkComb : MonoBehaviour
         if (tagDoObjetoAssociado.Contains(palavrasChave[1]))
         {
             comboioMesa = true;
+            Debug.Log("Comboio");
+
         }
 
         if (comboioMesa)
@@ -66,6 +68,7 @@ public class checkComb : MonoBehaviour
                 {
                     if (comboioError != null)
                     {
+                        Debug.Log("Cheguei");
                         comboioError.text = "Erros no objecto: " + err;
                         comboioError.color = Color.red;
                         audioSource.clip = wrongAnswerSound;
